@@ -1,0 +1,14 @@
+adb shell sm list-volumes all
+adb shell df -h /data
+adb shell df -h /storage/emulated/0
+adb shell mount
+adb shell dumpsys storage
+
+adb shell ls -ld /storage/emulated
+adb shell ls -ld /storage/emulated/0
+adb shell ls -ld /data/media
+
+adb logcat -c
+adb logcat -d -v threadtime > stor_fail.txt
+
+
