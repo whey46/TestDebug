@@ -1,5 +1,6 @@
 adb shell ps -A
 
+
 USER           PID  PPID     VSZ    RSS WCHAN            ADDR S NAME                       
 root             1     0   90600  11052 0                   0 S init
 root             2     0       0      0 0                   0 S [kthreadd]

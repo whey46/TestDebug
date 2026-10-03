@@ -1,5 +1,6 @@
 adb shell getprop
 
+
 [Build.BRAND]: [MTK]
 [bluetooth.profile.a2dp.source.enabled]: [true]
 [bluetooth.profile.asha.central.enabled]: [true]
