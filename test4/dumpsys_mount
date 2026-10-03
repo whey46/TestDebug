@@ -1,6 +1,181 @@
-adb dumpsys mount
+adb shell dumpsys mount
 
-adb: unknown command dumpsys
+Disks:
+
+Volumes:
+
+Records:
+  VolumeRecord:
+    type=PUBLIC fsUuid=741A-0812 partGuid= 
+    nickname=null userFlags=0 
+    createdMillis=2024-09-08 19:12:04 lastSeenMillis=2024-09-08 19:12:36 lastTrimMillis=unknown lastBenchMillis=unknown 
+  VolumeRecord:
+    type=PUBLIC fsUuid=4ED7-B7A8 partGuid= 
+    nickname=null userFlags=0 
+    createdMillis=2024-09-08 19:30:02 lastSeenMillis=2024-10-31 02:37:10 lastTrimMillis=unknown lastBenchMillis=unknown 
+  VolumeRecord:
+    type=PUBLIC fsUuid=6ECF-F2F9 partGuid= 
+    nickname=null userFlags=INITED 
+    createdMillis=2024-05-21 15:51:21 lastSeenMillis=2024-05-26 11:32:56 lastTrimMillis=unknown lastBenchMillis=unknown 
+  VolumeRecord:
+    type=PUBLIC fsUuid=7e09287c-8c4d-40f6-aa37-49fcb8404ee8 partGuid= 
+    nickname=null userFlags=0 
+    createdMillis=2024-09-08 19:30:02 lastSeenMillis=2024-10-31 02:37:10 lastTrimMillis=unknown lastBenchMillis=unknown 
+  VolumeRecord:
+    type=PUBLIC fsUuid=04A0-1B06 partGuid= 
+    nickname=null userFlags=0 
+    createdMillis=2024-05-22 14:00:06 lastSeenMillis=2024-05-22 14:00:32 lastTrimMillis=unknown lastBenchMillis=unknown 
+  VolumeRecord:
+    type=PUBLIC fsUuid=18cdc530-6cf7-4332-853c-b159b8d3638a partGuid= 
+    nickname=null userFlags=0 
+    createdMillis=2024-05-22 08:41:30 lastSeenMillis=2024-09-08 19:12:01 lastTrimMillis=unknown lastBenchMillis=unknown 
+  VolumeRecord:
+    type=PUBLIC fsUuid=E75B-DDF6 partGuid= 
+    nickname=null userFlags=0 
+    createdMillis=2024-05-26 11:33:10 lastSeenMillis=2024-05-26 11:33:14 lastTrimMillis=unknown lastBenchMillis=unknown 
+  VolumeRecord:
+    type=PUBLIC fsUuid=4253-15F0 partGuid= 
+    nickname=null userFlags=0 
+    createdMillis=2024-05-22 08:38:09 lastSeenMillis=2024-05-22 08:38:43 lastTrimMillis=unknown lastBenchMillis=unknown 
+  VolumeRecord:
+    type=PUBLIC fsUuid=FF7B-E7CD partGuid= 
+    nickname=null userFlags=SNOOZED 
+    createdMillis=2024-05-20 06:03:59 lastSeenMillis=2024-05-20 09:41:14 lastTrimMillis=unknown lastBenchMillis=unknown 
+  VolumeRecord:
+    type=PUBLIC fsUuid=4C64-8927 partGuid= 
+    nickname=null userFlags=0 
+    createdMillis=2024-11-28 02:32:07 lastSeenMillis=2024-11-28 02:38:04 lastTrimMillis=unknown lastBenchMillis=unknown 
+  VolumeRecord:
+    type=PUBLIC fsUuid=BA52-9502 partGuid= 
+    nickname=null userFlags=0 
+    createdMillis=2024-05-22 08:37:50 lastSeenMillis=2024-09-08 19:12:01 lastTrimMillis=unknown lastBenchMillis=unknown 
+  VolumeRecord:
+    type=PUBLIC fsUuid=A0F0-EB06 partGuid= 
+    nickname=null userFlags=0 
+    createdMillis=2024-05-26 11:44:08 lastSeenMillis=2024-09-09 15:09:13 lastTrimMillis=unknown lastBenchMillis=unknown 
+  VolumeRecord:
+    type=PUBLIC fsUuid=7EBE-788D partGuid= 
+    nickname=null userFlags=0 
+    createdMillis=2026-10-01 15:13:18 lastSeenMillis=2026-10-01 16:57:41 lastTrimMillis=unknown lastBenchMillis=unknown 
+  VolumeRecord:
+    type=PUBLIC fsUuid=EF6E-C078 partGuid= 
+    nickname=null userFlags=SNOOZED 
+    createdMillis=2024-05-20 03:59:55 lastSeenMillis=2024-05-20 06:03:53 lastTrimMillis=unknown lastBenchMillis=unknown 
+  VolumeRecord:
+    type=PUBLIC fsUuid=EF27-F5E3 partGuid= 
+    nickname=null userFlags=0 
+    createdMillis=2024-10-31 02:05:24 lastSeenMillis=2024-10-31 02:11:41 lastTrimMillis=unknown lastBenchMillis=unknown 
+  VolumeRecord:
+    type=PUBLIC fsUuid=9C33-6BBD partGuid= 
+    nickname=null userFlags=0 
+    createdMillis=2024-10-15 14:43:14 lastSeenMillis=2024-10-15 14:43:33 lastTrimMillis=unknown lastBenchMillis=unknown 
+  VolumeRecord:
+    type=PUBLIC fsUuid=B50D-15F0 partGuid= 
+    nickname=null userFlags=0 
+    createdMillis=2024-05-22 08:38:46 lastSeenMillis=2024-05-22 08:39:24 lastTrimMillis=unknown lastBenchMillis=unknown 
+  VolumeRecord:
+    type=PUBLIC fsUuid=5F8A-C1F3 partGuid= 
+    nickname=null userFlags=0 
+    createdMillis=2024-05-20 10:56:17 lastSeenMillis=2024-05-20 11:14:14 lastTrimMillis=unknown lastBenchMillis=unknown 
+  VolumeRecord:
+    type=PUBLIC fsUuid=36EA-0DE8 partGuid= 
+    nickname=null userFlags=0 
+    createdMillis=2024-05-23 00:30:01 lastSeenMillis=2024-05-23 00:30:22 lastTrimMillis=unknown lastBenchMillis=unknown 
+  VolumeRecord:
+    type=PUBLIC fsUuid=EE4B-3088 partGuid= 
+    nickname=null userFlags=0 
+    createdMillis=2024-05-20 11:14:17 lastSeenMillis=2024-05-21 15:51:19 lastTrimMillis=unknown lastBenchMillis=unknown 
+  VolumeRecord:
+    type=PUBLIC fsUuid=0403-0201 partGuid= 
+    nickname=boot userFlags=0 
+    createdMillis=2024-05-21 22:16:50 lastSeenMillis=2024-05-22 08:36:03 lastTrimMillis=unknown lastBenchMillis=unknown 
+  VolumeRecord:
+    type=PUBLIC fsUuid=7AFF-5C0B partGuid= 
+    nickname=null userFlags=0 
+    createdMillis=2026-09-29 23:51:13 lastSeenMillis=2026-09-30 18:25:50 lastTrimMillis=unknown lastBenchMillis=unknown 
+  VolumeRecord:
+    type=PUBLIC fsUuid=6430-3331 partGuid= 
+    nickname=null userFlags=INITED|SNOOZED 
+    createdMillis=2024-08-08 18:01:33 lastSeenMillis=2025-09-10 17:53:57 lastTrimMillis=unknown lastBenchMillis=unknown 
+  VolumeRecord:
+    type=PUBLIC fsUuid=EECB-9ABC partGuid= 
+    nickname=null userFlags=0 
+    createdMillis=2024-05-20 09:41:16 lastSeenMillis=2024-05-20 09:44:06 lastTrimMillis=unknown lastBenchMillis=unknown 
+  VolumeRecord:
+    type=PUBLIC fsUuid=7824-DF19 partGuid= 
+    nickname=null userFlags=0 
+    createdMillis=2024-11-28 01:11:24 lastSeenMillis=2024-11-28 02:30:07 lastTrimMillis=unknown lastBenchMillis=unknown 
+  VolumeRecord:
+    type=PUBLIC fsUuid=6F6F-7B68 partGuid= 
+    nickname=null userFlags=0 
+    createdMillis=2024-05-20 09:44:09 lastSeenMillis=2024-05-20 10:55:57 lastTrimMillis=unknown lastBenchMillis=unknown 
+  VolumeRecord:
+    type=PUBLIC fsUuid=F473-0817 partGuid= 
+    nickname=null userFlags=0 
+    createdMillis=2024-09-08 19:17:12 lastSeenMillis=2024-09-08 19:28:02 lastTrimMillis=unknown lastBenchMillis=unknown 
+  VolumeRecord:
+    type=PUBLIC fsUuid=0123-4567 partGuid= 
+    nickname=null userFlags=0 
+    createdMillis=2025-09-20 12:35:04 lastSeenMillis=2025-09-20 12:35:06 lastTrimMillis=unknown lastBenchMillis=unknown 
+  VolumeRecord:
+    type=PUBLIC fsUuid=83fb51c2-5795-4dd5-a586-455d0f574cc1 partGuid= 
+    nickname=null userFlags=0 
+    createdMillis=2026-03-03 20:57:31 lastSeenMillis=2026-03-03 21:15:07 lastTrimMillis=unknown lastBenchMillis=unknown 
+  VolumeRecord:
+    type=PUBLIC fsUuid=F6FB-3DEA partGuid= 
+    nickname=null userFlags=0 
+    createdMillis=2024-05-26 11:32:59 lastSeenMillis=2024-05-26 11:33:07 lastTrimMillis=unknown lastBenchMillis=unknown 
+  VolumeRecord:
+    type=PUBLIC fsUuid=0048-92A0 partGuid= 
+    nickname=null userFlags=INITED 
+    createdMillis=2025-09-10 17:54:39 lastSeenMillis=2025-09-10 17:57:43 lastTrimMillis=unknown lastBenchMillis=unknown 
+  VolumeRecord:
+    type=PUBLIC fsUuid=76E8-CACF partGuid= 
+    nickname=EVM userFlags=0 
+    createdMillis=2026-03-03 20:51:08 lastSeenMillis=2026-03-03 20:56:03 lastTrimMillis=unknown lastBenchMillis=unknown 
+  VolumeRecord:
+    type=PRIVATE fsUuid=c12dc2fb-418d-4a46-bb1d-7aa416bd4ca8 partGuid=535FF853-A4EF-4501-90E3-D170B4F7BD5F 
+    nickname=SD card userFlags=SNOOZED 
+    createdMillis=2025-09-10 17:57:52 lastSeenMillis=2026-10-02 21:43:07 lastTrimMillis=unknown lastBenchMillis=2025-09-10 17:58:02 
+  VolumeRecord:
+    type=PUBLIC fsUuid=B445-0AF9 partGuid= 
+    nickname=null userFlags=0 
+    createdMillis=2024-05-22 21:47:47 lastSeenMillis=2024-05-22 21:48:09 lastTrimMillis=unknown lastBenchMillis=unknown 
+  VolumeRecord:
+    type=PUBLIC fsUuid=B496-F2C5 partGuid= 
+    nickname=null userFlags=0 
+    createdMillis=2026-03-03 20:57:31 lastSeenMillis=2026-03-03 21:15:07 lastTrimMillis=unknown lastBenchMillis=unknown 
+  VolumeRecord:
+    type=PUBLIC fsUuid=4aa56689-dcb4-4759-90e6-179beae559ac partGuid= 
+    nickname=null userFlags=0 
+    createdMillis=2024-05-20 03:59:55 lastSeenMillis=2024-05-20 06:03:53 lastTrimMillis=unknown lastBenchMillis=unknown 
+  VolumeRecord:
+    type=PUBLIC fsUuid=3CA2-C1E6 partGuid= 
+    nickname=null userFlags=0 
+    createdMillis=2026-10-01 15:12:51 lastSeenMillis=2026-10-01 15:13:15 lastTrimMillis=unknown lastBenchMillis=unknown 
+  VolumeRecord:
+    type=PUBLIC fsUuid=e8565210-42bc-481c-966a-bbef5858afd1 partGuid= 
+    nickname=null userFlags=0 
+    createdMillis=2024-11-28 02:32:07 lastSeenMillis=2024-11-28 02:38:04 lastTrimMillis=unknown lastBenchMillis=unknown 
+
+Primary storage UUID: c12dc2fb-418d-4a46-bb1d-7aa416bd4ca8
+
+Internal storage (null) total size: 64000000000 (67108864000000000 MiB)
+
+Local unlocked users: []
+System unlocked users: []
+
+mObbMounts:
+
+mObbPathToStateMap:
+
+Media cloud providers: {}
+
+ExtM:
+  ExtM not init, nothing to dump
+
+
+Last maintenance: 2026-10-01 20:24:52
 
 ----------------------------------------
 

@@ -1,12 +1,331 @@
-adb logcat -b all -d -v threadtime | grep -iE vold|StorageManager}ExternalStorageService}FuseDaemon|FUSE|emulated|mount|f2fs|void|dm-|mount|I/O error
+adb logcat -b all -d -v threadtime | grep -iE "vold|StorageManager|ExternalStorageService|FuseDaemon|FUSE|emulated|mount|f2fs|void|dm-|mount|I/O error|primary storage|mount.*fail|fail.*mount|avc|permission denied"
 
-./exec.sh: line 28: StorageManager}ExternalStorageService}FuseDaemon: command not found
-./exec.sh: line 28: FUSE: command not found
-./exec.sh: line 28: emulated: command not found
-./exec.sh: line 28: void: command not found
-./exec.sh: line 28: f2fs: command not found
-./exec.sh: line 28: dm-: command not found
-./exec.sh: line 28: I/O: No such file or directory
+10-03 08:38:19.169     1     1 I auditd  : type=1107 audit(0.0:4): uid=0 auid=4294967295 ses=4294967295 subj=u:r:init:s0 msg='avc: denied { read } for property=vts.native_server.on pid=0 uid=0 gid=0 scontext=u:r:vendor_init:s0 tcontext=u:object_r:vts_status_prop:s0 tclass=file permissive=0'
+10-03 08:38:19.169     1     1 I auditd  : type=1107 audit(0.0:5): uid=0 auid=4294967295 ses=4294967295 subj=u:r:init:s0 msg='avc: denied { read } for property=vts.native_server.on pid=0 uid=0 gid=0 scontext=u:r:vendor_init:s0 tcontext=u:object_r:vts_status_prop:s0 tclass=file permissive=0'
+10-03 08:38:19.169     1     1 I auditd  : type=1107 audit(0.0:6): uid=0 auid=4294967295 ses=4294967295 subj=u:r:init:s0 msg='avc: denied { read } for property=vts.native_server.on pid=0 uid=0 gid=0 scontext=u:r:vendor_init:s0 tcontext=u:object_r:vts_status_prop:s0 tclass=file permissive=0'
+10-03 08:38:19.169     1     1 I auditd  : type=1107 audit(0.0:7): uid=0 auid=4294967295 ses=4294967295 subj=u:r:init:s0 msg='avc: denied { read } for property=vts.native_server.on pid=0 uid=0 gid=0 scontext=u:r:vendor_init:s0 tcontext=u:object_r:vts_status_prop:s0 tclass=file permissive=0'
+10-03 08:38:21.459   431   431 I auditd  : type=1400 audit(0.0:8): avc: denied { read } for comm="e2fsck" name="mmcblk0p10" dev="tmpfs" ino=12439 scontext=u:r:fsck:s0 tcontext=u:object_r:block_device:s0 tclass=blk_file permissive=0
+10-03 08:38:21.459   431   431 I auditd  : type=1400 audit(0.0:9): avc: denied { read write } for comm="e2fsck" name="mmcblk0p10" dev="tmpfs" ino=12439 scontext=u:r:fsck:s0 tcontext=u:object_r:block_device:s0 tclass=blk_file permissive=0
+10-03 08:38:22.546   442   442 I auditd  : type=1400 audit(0.0:10): avc: denied { dac_read_search } for comm="tee-supplicant" capability=2 scontext=u:r:tee:s0 tcontext=u:r:tee:s0 tclass=capability permissive=0
+10-03 08:38:25.416   595   595 I auditd  : type=1400 audit(0.0:11): avc: denied { write } for comm="system_perf_ini" name="swappiness" dev="proc" ino=12703 scontext=u:r:system_perf_init:s0 tcontext=u:object_r:proc_swappiness:s0 tclass=file permissive=0
+10-03 08:38:25.956     1     1 I auditd  : type=1400 audit(0.0:12): avc: denied { write } for comm="init" name="discard_max_bytes" dev="sysfs" ino=39304 scontext=u:r:init:s0 tcontext=u:object_r:sysfs_devices_block:s0 tclass=file permissive=0
+10-03 08:38:25.959     1     1 I auditd  : type=1400 audit(0.0:13): avc: denied { setattr } for comm="init" name="brightness" dev="sysfs" ino=40424 scontext=u:r:init:s0 tcontext=u:object_r:sysfs_ledscit:s0 tclass=file permissive=0
+10-03 08:38:26.236     1     1 I auditd  : type=1400 audit(0.0:14): avc: denied { create } for comm="init" name="wfca_rds" scontext=u:r:init:s0 tcontext=u:object_r:socket_device:s0 tclass=sock_file permissive=0
+10-03 08:38:26.256   314   314 I auditd  : type=1400 audit(0.0:15): avc: denied { write } for comm="init" name="dirty_writeback_centisecs" dev="proc" ino=17473 scontext=u:r:vendor_init:s0 tcontext=u:object_r:proc:s0 tclass=file permissive=0
+10-03 08:38:26.306   652   652 I auditd  : type=1400 audit(0.0:16): avc: denied { search } for comm="ccci_mdinit" name="mdlog" dev="dm-37" ino=312 scontext=u:r:ccci_mdinit:s0 tcontext=u:object_r:mdlog_data_file:s0 tclass=dir permissive=0
+10-03 08:38:26.306   652   652 I auditd  : type=1400 audit(0.0:17): avc: denied { search } for comm="ccci_mdinit" name="mdl" dev="dm-37" ino=314 scontext=u:r:ccci_mdinit:s0 tcontext=u:object_r:mdlog_data_file:s0 tclass=dir permissive=0
+10-03 08:38:26.359   657   657 I auditd  : type=1400 audit(0.0:18): avc: denied { read } for comm="nvram_daemon" name="cmdline" dev="proc" ino=4026532069 scontext=u:r:nvram_daemon:s0 tcontext=u:object_r:proc_cmdline:s0 tclass=file permissive=0
+10-03 08:38:26.359   657   657 I auditd  : type=1400 audit(0.0:19): avc: denied { search } for comm="nvram_daemon" name="android" dev="sysfs" ino=36 scontext=u:r:nvram_daemon:s0 tcontext=u:object_r:sysfs_dt_firmware_android:s0 tclass=dir permissive=0
+10-03 08:38:26.359   657   657 I auditd  : type=1400 audit(0.0:20): avc: denied { search } for comm="nvram_daemon" name="android" dev="sysfs" ino=36 scontext=u:r:nvram_daemon:s0 tcontext=u:object_r:sysfs_dt_firmware_android:s0 tclass=dir permissive=0
+10-03 08:38:26.359   657   657 I auditd  : type=1400 audit(0.0:21): avc: denied { read } for comm="nvram_daemon" name="cmdline" dev="proc" ino=4026532069 scontext=u:r:nvram_daemon:s0 tcontext=u:object_r:proc_cmdline:s0 tclass=file permissive=0
+10-03 08:38:26.359   657   657 I auditd  : type=1400 audit(0.0:22): avc: denied { search } for comm="nvram_daemon" name="android" dev="sysfs" ino=36 scontext=u:r:nvram_daemon:s0 tcontext=u:object_r:sysfs_dt_firmware_android:s0 tclass=dir permissive=0
+10-03 08:38:26.359   657   657 I auditd  : type=1400 audit(0.0:23): avc: denied { search } for comm="nvram_daemon" name="android" dev="sysfs" ino=36 scontext=u:r:nvram_daemon:s0 tcontext=u:object_r:sysfs_dt_firmware_android:s0 tclass=dir permissive=0
+10-03 08:38:26.446   634   634 I auditd  : type=1400 audit(0.0:24): avc: denied { read write } for comm="boot_logo_updat" name="boot_mode" dev="sysfs" ino=5611 scontext=u:r:boot_logo_updater:s0 tcontext=u:object_r:sysfs_boot_mode:s0 tclass=file permissive=0
+10-03 08:38:26.449     1     1 I auditd  : type=1107 audit(0.0:25): uid=0 auid=4294967295 ses=4294967295 subj=u:r:init:s0 msg='avc: denied { set } for property=vendor.sys.boot.reason pid=634 uid=0 gid=1003 scontext=u:r:boot_logo_updater:s0 tcontext=u:object_r:vendor_default_prop:s0 tclass=property_service permissive=0'
+10-03 08:38:26.453   634   634 I auditd  : type=1400 audit(0.0:26): avc: denied { getattr } for comm="boot_logo_updat" path="/dev/kmsg" dev="tmpfs" ino=9229 scontext=u:r:boot_logo_updater:s0 tcontext=u:object_r:kmsg_device:s0 tclass=chr_file permissive=0
+10-03 08:38:26.456   634   634 I auditd  : type=1400 audit(0.0:27): avc: denied { read } for comm="boot_logo_updat" name="cmdline" dev="proc" ino=4026532069 scontext=u:r:boot_logo_updater:s0 tcontext=u:object_r:proc_cmdline:s0 tclass=file permissive=0
+10-03 08:38:26.456   634   634 I auditd  : type=1400 audit(0.0:28): avc: denied { search } for comm="boot_logo_updat" name="android" dev="sysfs" ino=36 scontext=u:r:boot_logo_updater:s0 tcontext=u:object_r:sysfs_dt_firmware_android:s0 tclass=dir permissive=0
+10-03 08:38:26.456   634   634 I auditd  : type=1400 audit(0.0:29): avc: denied { search } for comm="boot_logo_updat" name="android" dev="sysfs" ino=36 scontext=u:r:boot_logo_updater:s0 tcontext=u:object_r:sysfs_dt_firmware_android:s0 tclass=dir permissive=0
+10-03 08:38:26.456   634   634 I auditd  : type=1400 audit(0.0:30): avc: denied { read } for comm="boot_logo_updat" name="cmdline" dev="proc" ino=4026532069 scontext=u:r:boot_logo_updater:s0 tcontext=u:object_r:proc_cmdline:s0 tclass=file permissive=0
+10-03 08:38:26.456   634   634 I auditd  : type=1400 audit(0.0:31): avc: denied { search } for comm="boot_logo_updat" name="android" dev="sysfs" ino=36 scontext=u:r:boot_logo_updater:s0 tcontext=u:object_r:sysfs_dt_firmware_android:s0 tclass=dir permissive=0
+10-03 08:38:26.456   634   634 I auditd  : type=1400 audit(0.0:32): avc: denied { search } for comm="boot_logo_updat" name="android" dev="sysfs" ino=36 scontext=u:r:boot_logo_updater:s0 tcontext=u:object_r:sysfs_dt_firmware_android:s0 tclass=dir permissive=0
+10-03 08:38:26.759   633   633 I auditd  : type=1400 audit(0.0:33): avc: denied { read } for comm="audioserver" name="u:object_r:vendor_default_prop:s0" dev="tmpfs" ino=865 scontext=u:r:audioserver:s0 tcontext=u:object_r:vendor_default_prop:s0 tclass=file permissive=0
+10-03 08:38:26.763     1     1 I auditd  : type=1107 audit(0.0:34): uid=0 auid=4294967295 ses=4294967295 subj=u:r:init:s0 msg='avc: denied { set } for property=persist.vendor.atm.mdmode pid=314 uid=0 gid=0 scontext=u:r:vendor_init:s0 tcontext=u:object_r:vendor_mtk_atm_mdmode_prop:s0 tclass=property_service permissive=0'
+10-03 08:38:26.873     1     1 I auditd  : type=1400 audit(0.0:35): avc: denied { create } for comm="init" name="lbs_dbg" scontext=u:r:init:s0 tcontext=u:object_r:socket_device:s0 tclass=sock_file permissive=0
+10-03 08:38:26.956   752   752 I auditd  : type=1400 audit(0.0:36): avc: denied { write } for comm="atrace" name="enable" dev="tracefs" ino=6268 scontext=u:r:atrace:s0 tcontext=u:object_r:debugfs_tracing_debug:s0 tclass=file permissive=0
+10-03 08:38:27.073     1     1 I auditd  : type=1400 audit(0.0:37): avc: denied { create } for comm="init" name="miui_booster" scontext=u:r:init:s0 tcontext=u:object_r:socket_device:s0 tclass=sock_file permissive=0
+10-03 08:38:27.086   746   746 I auditd  : type=1400 audit(0.0:38): avc: denied { read } for comm="mnld" name="brightness" dev="sysfs" ino=40424 scontext=u:r:mnld:s0 tcontext=u:object_r:sysfs_ledscit:s0 tclass=file permissive=0
+10-03 08:38:27.269   835   835 I auditd  : type=1400 audit(0.0:39): avc: denied { read } for comm="netdiag" name="u:object_r:vendor_default_prop:s0" dev="tmpfs" ino=865 scontext=u:r:netdiag:s0 tcontext=u:object_r:vendor_default_prop:s0 tclass=file permissive=0
+10-03 08:38:27.316   652   652 I auditd  : type=1400 audit(0.0:40): avc: denied { read } for comm="ccci_mdinit" name="boot_mode" dev="sysfs" ino=5611 scontext=u:r:ccci_mdinit:s0 tcontext=u:object_r:sysfs_boot_mode:s0 tclass=file permissive=0
+10-03 08:38:27.503   843   843 I auditd  : type=1400 audit(0.0:41): avc: denied { read } for comm="android.hardwar" name="u:object_r:default_prop:s0" dev="tmpfs" ino=593 scontext=u:r:mediacodec:s0 tcontext=u:object_r:default_prop:s0 tclass=file permissive=0
+10-03 08:38:27.679     1     1 I auditd  : type=1107 audit(0.0:42): uid=0 auid=4294967295 ses=4294967295 subj=u:r:init:s0 msg='avc: denied { set } for property=vendor.pullFWlog pid=968 uid=2000 gid=1007 scontext=u:r:connsyslogger:s0 tcontext=u:object_r:vendor_default_prop:s0 tclass=property_service permissive=0'
+10-03 08:38:28.218   389   389 I auditd  : avc:  denied  { find } for pid=872 uid=1046 name=android.hardware.media.c2.IComponentStore/software scontext=u:r:mediaswcodec:s0 tcontext=u:object_r:default_android_service:s0 tclass=service_manager permissive=0
+10-03 08:38:28.239   875   875 I auditd  : type=1400 audit(0.0:43): avc: denied { search } for comm="BootAnimation" name="asound" dev="proc" ino=4026532054 scontext=u:r:bootanim:s0 tcontext=u:object_r:proc_asound:s0 tclass=dir permissive=0
+10-03 08:38:28.283   633   633 I auditd  : type=1400 audit(0.0:44): avc: denied { read } for comm="audioserver" name="u:object_r:vendor_default_prop:s0" dev="tmpfs" ino=865 scontext=u:r:audioserver:s0 tcontext=u:object_r:vendor_default_prop:s0 tclass=file permissive=0
+10-03 08:38:28.429     1     1 I auditd  : type=1400 audit(0.0:45): avc: denied { create } for comm="init" name="bip_socket" scontext=u:r:init:s0 tcontext=u:object_r:socket_device:s0 tclass=sock_file permissive=0
+10-03 08:38:28.493  1075  1075 I auditd  : type=1400 audit(0.0:46): avc: denied { read } for comm="bip" name="u:object_r:net_dns_prop:s0" dev="tmpfs" ino=682 scontext=u:r:bip:s0 tcontext=u:object_r:net_dns_prop:s0 tclass=file permissive=0
+10-03 08:38:28.493  1075  1075 I auditd  : type=1400 audit(0.0:47): avc: denied { read } for comm="bip" name="u:object_r:net_dns_prop:s0" dev="tmpfs" ino=682 scontext=u:r:bip:s0 tcontext=u:object_r:net_dns_prop:s0 tclass=file permissive=0
+10-03 08:38:29.486     1     1 I auditd  : type=1107 audit(0.0:48): uid=0 auid=4294967295 ses=4294967295 subj=u:r:init:s0 msg='avc: denied { set } for property=ctl.stop$ril-daemon pid=1084 uid=1001 gid=1001 scontext=u:r:gsm0710muxd:s0 tcontext=u:object_r:ctl_stop_prop:s0 tclass=property_service permissive=0'
+10-03 08:38:29.723   849   849 I auditd  : type=1400 audit(0.0:49): avc: denied { read } for comm="camerahalserver" name="u:object_r:default_prop:s0" dev="tmpfs" ino=593 scontext=u:r:mtk_hal_camera:s0 tcontext=u:object_r:default_prop:s0 tclass=file permissive=0
+10-03 08:38:29.903     1     1 I auditd  : type=1107 audit(0.0:50): uid=0 auid=4294967295 ses=4294967295 subj=u:r:init:s0 msg='avc: denied { set } for property=vendor.sms.md.ready pid=1174 uid=1001 gid=1001 scontext=u:r:rild:s0 tcontext=u:object_r:vendor_default_prop:s0 tclass=property_service permissive=0'
+10-03 08:38:29.936     1     1 I auditd  : type=1107 audit(0.0:51): uid=0 auid=4294967295 ses=4294967295 subj=u:r:init:s0 msg='avc: denied { set } for property=vendor.sms.md.ready pid=1174 uid=1001 gid=1001 scontext=u:r:rild:s0 tcontext=u:object_r:vendor_default_prop:s0 tclass=property_service permissive=0'
+10-03 08:38:30.033  1252  1252 I auditd  : type=1400 audit(0.0:52): avc: denied { read } for comm="nvram@1.1-servi" name="cmdline" dev="proc" ino=4026532069 scontext=u:r:mtk_hal_nvramagent:s0 tcontext=u:object_r:proc_cmdline:s0 tclass=file permissive=0
+10-03 08:38:30.033  1252  1252 I auditd  : type=1400 audit(0.0:53): avc: denied { search } for comm="nvram@1.1-servi" name="android" dev="sysfs" ino=36 scontext=u:r:mtk_hal_nvramagent:s0 tcontext=u:object_r:sysfs_dt_firmware_android:s0 tclass=dir permissive=0
+10-03 08:38:30.033  1252  1252 I auditd  : type=1400 audit(0.0:54): avc: denied { search } for comm="nvram@1.1-servi" name="android" dev="sysfs" ino=36 scontext=u:r:mtk_hal_nvramagent:s0 tcontext=u:object_r:sysfs_dt_firmware_android:s0 tclass=dir permissive=0
+10-03 08:38:30.033  1252  1252 I auditd  : type=1400 audit(0.0:55): avc: denied { read } for comm="nvram@1.1-servi" name="cmdline" dev="proc" ino=4026532069 scontext=u:r:mtk_hal_nvramagent:s0 tcontext=u:object_r:proc_cmdline:s0 tclass=file permissive=0
+10-03 08:38:30.033  1252  1252 I auditd  : type=1400 audit(0.0:56): avc: denied { search } for comm="nvram@1.1-servi" name="android" dev="sysfs" ino=36 scontext=u:r:mtk_hal_nvramagent:s0 tcontext=u:object_r:sysfs_dt_firmware_android:s0 tclass=dir permissive=0
+10-03 08:38:30.036  1252  1252 I auditd  : type=1400 audit(0.0:57): avc: denied { search } for comm="nvram@1.1-servi" name="android" dev="sysfs" ino=36 scontext=u:r:mtk_hal_nvramagent:s0 tcontext=u:object_r:sysfs_dt_firmware_android:s0 tclass=dir permissive=0
+10-03 08:38:34.683   452   452 I auditd  : type=1400 audit(0.0:58): avc: denied { read } for comm="binder:452_4" name="wakeup108" dev="sysfs" ino=39629 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs_batteryinfo:s0 tclass=dir permissive=0
+10-03 08:38:34.699   452   452 I auditd  : type=1400 audit(0.0:59): avc: denied { read } for comm="binder:452_4" name="wakeup104" dev="sysfs" ino=37860 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs_battery_supply:s0 tclass=dir permissive=0
+10-03 08:38:34.726   452   452 I auditd  : type=1400 audit(0.0:60): avc: denied { read } for comm="binder:452_4" name="wakeup109" dev="sysfs" ino=39669 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs_usb_supply:s0 tclass=dir permissive=0
+10-03 08:38:34.733   452   452 I auditd  : type=1400 audit(0.0:61): avc: denied { read } for comm="binder:452_4" name="wakeup107" dev="sysfs" ino=39592 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs_usb_supply:s0 tclass=dir permissive=0
+10-03 08:38:35.497  1273  1273 I pm_critical_info: Package com.android.location.fused was user id 0 but is now user SharedUserSetting{934f34d android.uid.system/1000} with id 1000; I am not changing its files so it will probably fail!
+10-03 08:38:37.746   872   872 I auditd  : type=1400 audit(0.0:62): avc: denied { read } for comm="HwBinder:872_2" name="u:object_r:aac_drc_prop:s0" dev="tmpfs" ino=519 scontext=u:r:mediaswcodec:s0 tcontext=u:object_r:aac_drc_prop:s0 tclass=file permissive=0
+10-03 08:38:37.749   872   872 I auditd  : type=1400 audit(0.0:63): avc: denied { read } for comm="HwBinder:872_2" name="u:object_r:aac_drc_prop:s0" dev="tmpfs" ino=519 scontext=u:r:mediaswcodec:s0 tcontext=u:object_r:aac_drc_prop:s0 tclass=file permissive=0
+10-03 08:38:37.749   872   872 I auditd  : type=1400 audit(0.0:64): avc: denied { read } for comm="HwBinder:872_2" name="u:object_r:aac_drc_prop:s0" dev="tmpfs" ino=519 scontext=u:r:mediaswcodec:s0 tcontext=u:object_r:aac_drc_prop:s0 tclass=file permissive=0
+10-03 08:38:37.749   872   872 I auditd  : type=1400 audit(0.0:65): avc: denied { read } for comm="HwBinder:872_2" name="u:object_r:aac_drc_prop:s0" dev="tmpfs" ino=519 scontext=u:r:mediaswcodec:s0 tcontext=u:object_r:aac_drc_prop:s0 tclass=file permissive=0
+10-03 08:38:37.749   872   872 I auditd  : type=1400 audit(0.0:66): avc: denied { read } for comm="HwBinder:872_2" name="u:object_r:aac_drc_prop:s0" dev="tmpfs" ino=519 scontext=u:r:mediaswcodec:s0 tcontext=u:object_r:aac_drc_prop:s0 tclass=file permissive=0
+10-03 08:38:37.749   872   872 I auditd  : type=1400 audit(0.0:67): avc: denied { read } for comm="HwBinder:872_2" name="u:object_r:aac_drc_prop:s0" dev="tmpfs" ino=519 scontext=u:r:mediaswcodec:s0 tcontext=u:object_r:aac_drc_prop:s0 tclass=file permissive=0
+10-03 08:38:38.189   616   616 I auditd  : type=1400 audit(0.0:68): avc: denied { read } for comm="VcodecProcess" name="u:object_r:default_prop:s0" dev="tmpfs" ino=593 scontext=u:r:mtk_hal_c2:s0 tcontext=u:object_r:default_prop:s0 tclass=file permissive=0
+10-03 08:38:38.216   616   616 I auditd  : type=1400 audit(0.0:69): avc: denied { read } for comm="VcodecProcess" name="u:object_r:default_prop:s0" dev="tmpfs" ino=593 scontext=u:r:mtk_hal_c2:s0 tcontext=u:object_r:default_prop:s0 tclass=file permissive=0
+10-03 08:38:38.239   616   616 I auditd  : type=1400 audit(0.0:70): avc: denied { read } for comm="VcodecProcess" name="u:object_r:default_prop:s0" dev="tmpfs" ino=593 scontext=u:r:mtk_hal_c2:s0 tcontext=u:object_r:default_prop:s0 tclass=file permissive=0
+10-03 08:38:38.259   616   616 I auditd  : type=1400 audit(0.0:71): avc: denied { read } for comm="VcodecProcess" name="u:object_r:default_prop:s0" dev="tmpfs" ino=593 scontext=u:r:mtk_hal_c2:s0 tcontext=u:object_r:default_prop:s0 tclass=file permissive=0
+10-03 08:38:38.359   872   872 I auditd  : type=1400 audit(0.0:72): avc: denied { read } for comm="HwBinder:872_2" name="u:object_r:aac_drc_prop:s0" dev="tmpfs" ino=519 scontext=u:r:mediaswcodec:s0 tcontext=u:object_r:aac_drc_prop:s0 tclass=file permissive=0
+10-03 08:38:38.359   872   872 I auditd  : type=1400 audit(0.0:73): avc: denied { read } for comm="HwBinder:872_2" name="u:object_r:aac_drc_prop:s0" dev="tmpfs" ino=519 scontext=u:r:mediaswcodec:s0 tcontext=u:object_r:aac_drc_prop:s0 tclass=file permissive=0
+10-03 08:38:38.359   872   872 I auditd  : type=1400 audit(0.0:74): avc: denied { read } for comm="HwBinder:872_2" name="u:object_r:aac_drc_prop:s0" dev="tmpfs" ino=519 scontext=u:r:mediaswcodec:s0 tcontext=u:object_r:aac_drc_prop:s0 tclass=file permissive=0
+10-03 08:38:38.359   872   872 I auditd  : type=1400 audit(0.0:75): avc: denied { read } for comm="HwBinder:872_2" name="u:object_r:aac_drc_prop:s0" dev="tmpfs" ino=519 scontext=u:r:mediaswcodec:s0 tcontext=u:object_r:aac_drc_prop:s0 tclass=file permissive=0
+10-03 08:38:38.359   872   872 I auditd  : type=1400 audit(0.0:76): avc: denied { read } for comm="HwBinder:872_2" name="u:object_r:aac_drc_prop:s0" dev="tmpfs" ino=519 scontext=u:r:mediaswcodec:s0 tcontext=u:object_r:aac_drc_prop:s0 tclass=file permissive=0
+10-03 08:38:38.359   872   872 I auditd  : type=1400 audit(0.0:77): avc: denied { read } for comm="HwBinder:872_2" name="u:object_r:aac_drc_prop:s0" dev="tmpfs" ino=519 scontext=u:r:mediaswcodec:s0 tcontext=u:object_r:aac_drc_prop:s0 tclass=file permissive=0
+10-03 08:38:38.363   872   872 I auditd  : type=1400 audit(0.0:78): avc: denied { read } for comm="HwBinder:872_2" name="u:object_r:aac_drc_prop:s0" dev="tmpfs" ino=519 scontext=u:r:mediaswcodec:s0 tcontext=u:object_r:aac_drc_prop:s0 tclass=file permissive=0
+10-03 08:38:38.363   872   872 I auditd  : type=1400 audit(0.0:79): avc: denied { read } for comm="HwBinder:872_2" name="u:object_r:aac_drc_prop:s0" dev="tmpfs" ino=519 scontext=u:r:mediaswcodec:s0 tcontext=u:object_r:aac_drc_prop:s0 tclass=file permissive=0
+10-03 08:38:38.366   872   872 I auditd  : type=1400 audit(0.0:80): avc: denied { read } for comm="HwBinder:872_2" name="u:object_r:aac_drc_prop:s0" dev="tmpfs" ino=519 scontext=u:r:mediaswcodec:s0 tcontext=u:object_r:aac_drc_prop:s0 tclass=file permissive=0
+10-03 08:38:38.366   872   872 I auditd  : type=1400 audit(0.0:81): avc: denied { read } for comm="HwBinder:872_2" name="u:object_r:aac_drc_prop:s0" dev="tmpfs" ino=519 scontext=u:r:mediaswcodec:s0 tcontext=u:object_r:aac_drc_prop:s0 tclass=file permissive=0
+10-03 08:38:38.366   872   872 I auditd  : type=1400 audit(0.0:82): avc: denied { read } for comm="HwBinder:872_2" name="u:object_r:aac_drc_prop:s0" dev="tmpfs" ino=519 scontext=u:r:mediaswcodec:s0 tcontext=u:object_r:aac_drc_prop:s0 tclass=file permissive=0
+10-03 08:38:38.366   872   872 I auditd  : type=1400 audit(0.0:83): avc: denied { read } for comm="HwBinder:872_2" name="u:object_r:aac_drc_prop:s0" dev="tmpfs" ino=519 scontext=u:r:mediaswcodec:s0 tcontext=u:object_r:aac_drc_prop:s0 tclass=file permissive=0
+10-03 08:38:39.049  1273  1273 I auditd  : type=1400 audit(0.0:84): avc: denied { read } for comm="android.ui" name="name" dev="sysfs" ino=40512 scontext=u:r:system_server:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
+10-03 08:38:39.053  1273  1273 I auditd  : type=1400 audit(0.0:85): avc: denied { read } for comm="android.ui" name="name" dev="sysfs" ino=40509 scontext=u:r:system_server:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
+10-03 08:38:42.918  1273  1273 E AppOps  : 	at com.android.server.StorageManagerService.snapshotAndMonitorLegacyStorageAppOp(StorageManagerService.java:2155)
+10-03 08:38:42.918  1273  1273 E AppOps  : 	at com.android.server.StorageManagerService.-$$Nest$msnapshotAndMonitorLegacyStorageAppOp(Unknown Source:0)
+10-03 08:38:42.918  1273  1273 E AppOps  : 	at com.android.server.StorageManagerService$Lifecycle.onUserStarting(StorageManagerService.java:282)
+10-03 08:38:42.919  1273  1273 V StorageManagerService: Package com.ipoji.app does not have legacy storage
+10-03 08:38:42.919  1273  1273 V StorageManagerService: Package com.android.wifi.dialog does not have legacy storage
+10-03 08:38:42.921  1273  1273 E AppOps  : 	at com.android.server.StorageManagerService.snapshotAndMonitorLegacyStorageAppOp(StorageManagerService.java:2155)
+10-03 08:38:42.921  1273  1273 E AppOps  : 	at com.android.server.StorageManagerService.-$$Nest$msnapshotAndMonitorLegacyStorageAppOp(Unknown Source:0)
+10-03 08:38:42.921  1273  1273 E AppOps  : 	at com.android.server.StorageManagerService$Lifecycle.onUserStarting(StorageManagerService.java:282)
+10-03 08:38:42.921  1273  1273 V StorageManagerService: Package io.github.deweyreed.timer.other does not have legacy storage
+10-03 08:38:42.923  1273  1273 E AppOps  : 	at com.android.server.StorageManagerService.snapshotAndMonitorLegacyStorageAppOp(StorageManagerService.java:2155)
+10-03 08:38:42.923  1273  1273 E AppOps  : 	at com.android.server.StorageManagerService.-$$Nest$msnapshotAndMonitorLegacyStorageAppOp(Unknown Source:0)
+10-03 08:38:42.923  1273  1273 E AppOps  : 	at com.android.server.StorageManagerService$Lifecycle.onUserStarting(StorageManagerService.java:282)
+10-03 08:38:42.924  1273  1273 V StorageManagerService: Package org.codeberg.genericpers0n.soundrecorderplus does not have legacy storage
+10-03 08:38:42.924  1273  1273 V StorageManagerService: Package android does not have legacy storage
+10-03 08:38:42.924  1273  1273 V StorageManagerService: Package com.android.contacts does not have legacy storage
+10-03 08:38:42.924  1273  1273 V StorageManagerService: Package com.android.camera.overlay does not have legacy storage
+10-03 08:38:42.924  1273  1273 V StorageManagerService: Package com.google.android.sdksandbox does not have legacy storage
+10-03 08:38:42.924  1273  1273 V StorageManagerService: Package com.android.egg does not have legacy storage
+10-03 08:38:42.925  1273  1273 V StorageManagerService: Package com.android.mms does not have legacy storage
+10-03 08:38:42.925  1273  1273 V StorageManagerService: Package com.android.mtp does not have legacy storage
+10-03 08:38:42.925  1273  1273 V StorageManagerService: Package com.android.nfc does not have legacy storage
+10-03 08:38:42.925  1273  1273 V StorageManagerService: Package com.android.ons does not have legacy storage
+10-03 08:38:42.925  1273  1273 V StorageManagerService: Package com.android.stk does not have legacy storage
+10-03 08:38:42.925  1273  1273 V StorageManagerService: Package com.android.backupconfirm does not have legacy storage
+10-03 08:38:42.925  1273  1273 V StorageManagerService: Package com.goodix.gftest does not have legacy storage
+10-03 08:38:42.925  1273  1273 V StorageManagerService: Package com.longcheertel.sarauth does not have legacy storage
+10-03 08:38:42.925  1273  1273 V StorageManagerService: Package com.miui.player does not have legacy storage
+10-03 08:38:42.925  1273  1273 V StorageManagerService: Package org.pocketworkstation.pckeyboard does not have legacy storage
+10-03 08:38:42.926  1273  1273 V StorageManagerService: Package com.android.provision does not have legacy storage
+10-03 08:38:42.926  1273  1273 V StorageManagerService: Package com.android.statementservice does not have legacy storage
+10-03 08:38:42.926  1273  1273 V StorageManagerService: Package com.google.android.gm does not have legacy storage
+10-03 08:38:42.926  1273  1273 V StorageManagerService: Package com.google.android.apps.tachyon does not have legacy storage
+10-03 08:38:42.926  1273  1273 V StorageManagerService: Package com.google.android.overlay.gmsconfig.common does not have legacy storage
+10-03 08:38:42.927  1273  1273 V StorageManagerService: Package com.android.overlay.systemui does not have legacy storage
+10-03 08:38:42.927  1273  1273 V StorageManagerService: Package com.android.settings.intelligence does not have legacy storage
+10-03 08:38:42.927  1273  1273 V StorageManagerService: Package com.mediatek.frameworkresoverlay does not have legacy storage
+10-03 08:38:42.927  1273  1273 V StorageManagerService: Package com.miui.global.packageinstaller does not have legacy storage
+10-03 08:38:42.930  1273  1273 E AppOps  : 	at com.android.server.StorageManagerService.snapshotAndMonitorLegacyStorageAppOp(StorageManagerService.java:2155)
+10-03 08:38:42.930  1273  1273 E AppOps  : 	at com.android.server.StorageManagerService.-$$Nest$msnapshotAndMonitorLegacyStorageAppOp(Unknown Source:0)
+10-03 08:38:42.930  1273  1273 E AppOps  : 	at com.android.server.StorageManagerService$Lifecycle.onUserStarting(StorageManagerService.java:282)
+10-03 08:38:42.930  1273  1273 V StorageManagerService: Package ch.protonvpn.android does not have legacy storage
+10-03 08:38:42.930  1273  1273 V StorageManagerService: Package com.android.overlay.gmscontactprovider does not have legacy storage
+10-03 08:38:42.931  1273  1273 V StorageManagerService: Package com.debug.loggerui does not have legacy storage
+10-03 08:38:42.931  1273  1273 V StorageManagerService: Package com.android.overlay.gmssettingprovider does not have legacy storage
+10-03 08:38:42.931  1273  1273 V StorageManagerService: Package com.google.android.apps.searchlite does not have legacy storage
+10-03 08:38:42.931  1273  1273 V StorageManagerService: Package com.android.internal.systemui.navbar.gestural_extra_wide_back does not have legacy storage
+10-03 08:38:42.931  1273  1273 V StorageManagerService: Package com.google.android.permissioncontroller does not have legacy storage
+10-03 08:38:42.932  1273  1273 V StorageManagerService: Package com.google.android.setupwizard does not have legacy storage
+10-03 08:38:42.932  1273  1273 V StorageManagerService: Package com.android.providers.settings does not have legacy storage
+10-03 08:38:42.932  1273  1273 V StorageManagerService: Package com.mediatek.miravision.ui does not have legacy storage
+10-03 08:38:42.932  1273  1273 V StorageManagerService: Package com.android.sharedstoragebackup does not have legacy storage
+10-03 08:38:42.932  1273  1273 V StorageManagerService: Package com.facebook.services does not have legacy storage
+10-03 08:38:42.932  1273  1273 V StorageManagerService: Package com.android.printspooler does not have legacy storage
+10-03 08:38:42.932  1273  1273 V StorageManagerService: Package com.android.dreams.basic does not have legacy storage
+10-03 08:38:42.932  1273  1273 V StorageManagerService: Package com.google.android.overlay.modules.ext.services does not have legacy storage
+10-03 08:38:42.933  1273  1273 V StorageManagerService: Package com.miui.videoplayer.overlay does not have legacy storage
+10-03 08:38:42.933  1273  1273 V StorageManagerService: Package com.android.incallui does not have legacy storage
+10-03 08:38:42.933  1273  1273 V StorageManagerService: Package com.google.android.overlay.gmsconfig.gallerygo does not have legacy storage
+10-03 08:38:42.933  1273  1273 V StorageManagerService: Package com.miui.bugreport does not have legacy storage
+10-03 08:38:42.933  1273  1273 V StorageManagerService: Package com.android.inputdevices does not have legacy storage
+10-03 08:38:42.934  1273  1273 V StorageManagerService: Package com.cpplusworld.cpiotkam does not have legacy storage
+10-03 08:38:42.934  1273  1273 V StorageManagerService: Package com.google.android.apps.wellbeing does not have legacy storage
+10-03 08:38:42.934  1273  1273 V StorageManagerService: Package com.pittvandewitt.wavelet does not have legacy storage
+10-03 08:38:42.934  1273  1273 V StorageManagerService: Package com.android.bips does not have legacy storage
+10-03 08:38:42.935  1273  1273 V StorageManagerService: Package com.mediatek does not have legacy storage
+10-03 08:38:42.937  1273  1273 E AppOps  : 	at com.android.server.StorageManagerService.snapshotAndMonitorLegacyStorageAppOp(StorageManagerService.java:2155)
+10-03 08:38:42.937  1273  1273 E AppOps  : 	at com.android.server.StorageManagerService.-$$Nest$msnapshotAndMonitorLegacyStorageAppOp(Unknown Source:0)
+10-03 08:38:42.937  1273  1273 E AppOps  : 	at com.android.server.StorageManagerService$Lifecycle.onUserStarting(StorageManagerService.java:282)
+10-03 08:38:42.938  1273  1273 V StorageManagerService: Package com.google.android.apps.nbu.files does not have legacy storage
+10-03 08:38:42.939  1273  1273 V StorageManagerService: Package com.google.android.overlay.gmsconfig.geotz does not have legacy storage
+10-03 08:38:42.939  1273  1273 V StorageManagerService: Package com.google.ambient.streaming does not have legacy storage
+10-03 08:38:42.939  1273  1273 V StorageManagerService: Package com.android.musicfx does not have legacy storage
+10-03 08:38:42.939  1273  1273 V StorageManagerService: Package net.sourceforge.opencamera does not have legacy storage
+10-03 08:38:42.940  1273  1273 V StorageManagerService: Package com.google.android.apps.docs does not have legacy storage
+10-03 08:38:42.940  1273  1273 V StorageManagerService: Package com.google.android.apps.maps does not have legacy storage
+10-03 08:38:42.940  1273  1273 V StorageManagerService: Package com.android.overlay.gmssettings does not have legacy storage
+10-03 08:38:42.940  1273  1273 V StorageManagerService: Package com.indus.appstore does not have legacy storage
+10-03 08:38:42.940  1273  1273 V StorageManagerService: Package com.mi.android.globalFileexplorer.overlay does not have legacy storage
+10-03 08:38:42.940  1273  1273 V StorageManagerService: Package com.android.cellbroadcastreceiver does not have legacy storage
+10-03 08:38:42.942  1273  1273 E AppOps  : 	at com.android.server.StorageManagerService.snapshotAndMonitorLegacyStorageAppOp(StorageManagerService.java:2155)
+10-03 08:38:42.942  1273  1273 E AppOps  : 	at com.android.server.StorageManagerService.-$$Nest$msnapshotAndMonitorLegacyStorageAppOp(Unknown Source:0)
+10-03 08:38:42.942  1273  1273 E AppOps  : 	at com.android.server.StorageManagerService$Lifecycle.onUserStarting(StorageManagerService.java:282)
+10-03 08:38:42.942  1273  1273 V StorageManagerService: Package com.marc.files does not have legacy storage
+10-03 08:38:42.942  1273  1273 V StorageManagerService: Package com.google.android.webview does not have legacy storage
+10-03 08:38:42.943  1273  1273 V StorageManagerService: Package com.opera.browser does not have legacy storage
+10-03 08:38:42.943  1273  1273 V StorageManagerService: Package com.android.onetimeinitializer does not have legacy storage
+10-03 08:38:42.943  1273  1273 V StorageManagerService: Package com.google.android.apps.cloudconsole does not have legacy storage
+10-03 08:38:42.944  1273  1273 V StorageManagerService: Package com.android.server.telecom does not have legacy storage
+10-03 08:38:42.944  1273  1273 V StorageManagerService: Package com.android.keychain does not have legacy storage
+10-03 08:38:42.944  1273  1273 V StorageManagerService: Package com.android.camera does not have legacy storage
+10-03 08:38:42.944  1273  1273 V StorageManagerService: Package com.android.chrome does not have legacy storage
+10-03 08:38:42.944  1273  1273 V StorageManagerService: Package com.xiaomi.glgm does not have legacy storage
+10-03 08:38:42.944  1273  1273 V StorageManagerService: Package com.google.android.packageinstaller does not have legacy storage
+10-03 08:38:42.944  1273  1273 V StorageManagerService: Package com.google.android.gms does not have legacy storage
+10-03 08:38:42.945  1273  1273 V StorageManagerService: Package com.google.android.gsf does not have legacy storage
+10-03 08:38:42.945  1273  1273 V StorageManagerService: Package com.google.android.ims does not have legacy storage
+10-03 08:38:42.945  1273  1273 V StorageManagerService: Package com.google.android.tts does not have legacy storage
+10-03 08:38:42.945  1273  1273 V StorageManagerService: Package com.android.wifi.resources does not have legacy storage
+10-03 08:38:42.945  1273  1273 V StorageManagerService: Package com.android.calllogbackup does not have legacy storage
+10-03 08:38:42.945  1273  1273 V StorageManagerService: Package com.google.android.partnersetup does not have legacy storage
+10-03 08:38:42.945  1273  1273 V StorageManagerService: Package com.android.cameraextensions does not have legacy storage
+10-03 08:38:42.946  1273  1273 V StorageManagerService: Package com.android.localtransport does not have legacy storage
+10-03 08:38:42.946  1273  1273 V StorageManagerService: Package com.google.android.videos does not have legacy storage
+10-03 08:38:42.946  1273  1273 V StorageManagerService: Package com.android.carrierdefaultapp does not have legacy storage
+10-03 08:38:42.947  1273  1273 V StorageManagerService: Package com.xiaomi.mipicks does not have legacy storage
+10-03 08:38:42.949  1273  1273 E AppOps  : 	at com.android.server.StorageManagerService.snapshotAndMonitorLegacyStorageAppOp(StorageManagerService.java:2155)
+10-03 08:38:42.949  1273  1273 E AppOps  : 	at com.android.server.StorageManagerService.-$$Nest$msnapshotAndMonitorLegacyStorageAppOp(Unknown Source:0)
+10-03 08:38:42.949  1273  1273 E AppOps  : 	at com.android.server.StorageManagerService$Lifecycle.onUserStarting(StorageManagerService.java:282)
+10-03 08:38:42.949  1273  1273 V StorageManagerService: Package com.dsemu.drastic does not have legacy storage
+10-03 08:38:42.949  1273  1273 V StorageManagerService: Package com.android.theme.font.notoserifsource does not have legacy storage
+10-03 08:38:42.950  1273  1273 V StorageManagerService: Package com.mediatek.FrameworkResOverlayExt does not have legacy storage
+10-03 08:38:42.950  1273  1273 V StorageManagerService: Package eu.depau.etchdroid does not have legacy storage
+10-03 08:38:42.950  1273  1273 V StorageManagerService: Package com.android.proxyhandler does not have legacy storage
+10-03 08:38:42.950  1273  1273 V StorageManagerService: Package com.google.android.safetycenter.resources does not have legacy storage
+10-03 08:38:42.951  1273  1273 V StorageManagerService: Package com.android.internal.display.cutout.emulation.waterfall does not have legacy storage
+10-03 08:38:42.952  1273  1273 E AppOps  : 	at com.android.server.StorageManagerService.snapshotAndMonitorLegacyStorageAppOp(StorageManagerService.java:2155)
+10-03 08:38:42.952  1273  1273 E AppOps  : 	at com.android.server.StorageManagerService.-$$Nest$msnapshotAndMonitorLegacyStorageAppOp(Unknown Source:0)
+10-03 08:38:42.952  1273  1273 E AppOps  : 	at com.android.server.StorageManagerService$Lifecycle.onUserStarting(StorageManagerService.java:282)
+10-03 08:38:42.952  1273  1273 V StorageManagerService: Package org.videolan.vlc does not have legacy storage
+10-03 08:38:42.953  1273  1273 V StorageManagerService: Package com.android.wifi.system.mainline.resources.overlay does not have legacy storage
+10-03 08:38:42.953  1273  1273 V StorageManagerService: Package com.google.android.connectivity.resources does not have legacy storage
+10-03 08:38:42.953  1273  1273 V StorageManagerService: Package com.google.android.overlay.modules.permissioncontroller.forframework does not have legacy storage
+10-03 08:38:42.953  1273  1273 V StorageManagerService: Package com.google.android.feedback does not have legacy storage
+10-03 08:38:42.953  1273  1273 V StorageManagerService: Package com.google.android.printservice.recommendation does not have legacy storage
+10-03 08:38:42.953  1273  1273 V StorageManagerService: Package com.google.android.apps.photos does not have legacy storage
+10-03 08:38:42.953  1273  1273 V StorageManagerService: Package com.google.android.syncadapters.calendar does not have legacy storage
+10-03 08:38:42.953  1273  1273 V StorageManagerService: Package com.android.managedprovisioning does not have legacy storage
+10-03 08:38:42.953  1273  1273 V StorageManagerService: Package com.samco.trackandgraph does not have legacy storage
+10-03 08:38:42.954  1273  1273 V StorageManagerService: Package com.fingerprints.sensortesttool does not have legacy storage
+10-03 08:38:42.954  1273  1273 V StorageManagerService: Package com.android.soundpicker does not have legacy storage
+10-03 08:38:42.954  1273  1273 V StorageManagerService: Package com.mediatek.capctrl.service does not have legacy storage
+10-03 08:38:42.954  1273  1273 V StorageManagerService: Package com.application.zomato does not have legacy storage
+10-03 08:38:42.954  1273  1273 V StorageManagerService: Package com.mediatek.callrecorder does not have legacy storage
+10-03 08:38:42.954  1273  1273 V StorageManagerService: Package com.android.providers.partnerbookmarks does not have legacy storage
+10-03 08:38:42.954  1273  1273 V StorageManagerService: Package com.proto.circuitsimulator does not have legacy storage
+10-03 08:38:42.955  1273  1273 V StorageManagerService: Package com.android.imsserviceentitlement does not have legacy storage
+10-03 08:38:42.955  1273  1273 V StorageManagerService: Package com.silead.factorytest does not have legacy storage
+10-03 08:38:42.955  1273  1273 V StorageManagerService: Package com.facebook.system does not have legacy storage
+10-03 08:38:42.955  1273  1273 V StorageManagerService: Package org.mozilla.firefox does not have legacy storage
+10-03 08:38:42.955  1273  1273 V StorageManagerService: Package com.grofers.customerapp.lit does not have legacy storage
+10-03 08:38:42.955  1273  1273 V StorageManagerService: Package com.miui.calculator.go does not have legacy storage
+10-03 08:38:42.955  1273  1273 V StorageManagerService: Package com.olaf.rereminder does not have legacy storage
+10-03 08:38:42.955  1273  1273 V StorageManagerService: Package com.longcheertel.AutoTest does not have legacy storage
+10-03 08:38:42.955  1273  1273 V StorageManagerService: Package com.google.android.gms.supervision does not have legacy storage
+10-03 08:38:42.955  1273  1273 V StorageManagerService: Package com.google.android.apps.photosgo does not have legacy storage
+10-03 08:38:42.956  1273  1273 V StorageManagerService: Package android.autoinstalls.config.Xiaomi.model does not have legacy storage
+10-03 08:38:42.956  1273  1273 V StorageManagerService: Package com.android.storagemanager does not have legacy storage
+10-03 08:38:42.956  1273  1273 V StorageManagerService: Package com.wdstechnology.android.kryten does not have legacy storage
+10-03 08:38:42.956  1273  1273 V StorageManagerService: Package com.miui.cleaner.go does not have legacy storage
+10-03 08:38:42.956  1273  1273 V StorageManagerService: Package com.google.android.overlay.gmsconfig.searchgo does not have legacy storage
+10-03 08:38:42.956  1273  1273 V StorageManagerService: Package com.android.bookmarkprovider does not have legacy storage
+10-03 08:38:42.956  1273  1273 V StorageManagerService: Package com.android.settings does not have legacy storage
+10-03 08:38:42.956  1273  1273 V StorageManagerService: Package com.google.android.apps.nbu.paisa.user does not have legacy storage
+10-03 08:38:42.956  1273  1273 V StorageManagerService: Package com.miui.player.overlay does not have legacy storage
+10-03 08:38:42.956  1273  1273 V StorageManagerService: Package com.gogo.launcher does not have legacy storage
+10-03 08:38:42.956  1273  1273 V StorageManagerService: Package com.google.android.overlay.modules.captiveportallogin.forframework does not have legacy storage
+10-03 08:38:42.956  1273  1273 V StorageManagerService: Package com.mediatek.lbs.em2.ui does not have legacy storage
+10-03 08:38:42.956  1273  1273 V StorageManagerService: Package com.android.cts.ctsshim does not have legacy storage
+10-03 08:38:42.957  1273  1273 V StorageManagerService: Package com.android.remoteprovisioner does not have legacy storage
+10-03 08:38:42.957  1273  1273 V StorageManagerService: Package com.google.android.go.captiveportallogin does not have legacy storage
+10-03 08:38:42.957  1273  1273 V StorageManagerService: Package com.google.android.overlay.modules.modulemetadata.forframework does not have legacy storage
+10-03 08:38:42.957  1273  1273 V StorageManagerService: Package com.rs.shoonya does not have legacy storage
+10-03 08:38:42.957  1273  1273 V StorageManagerService: Package com.google.android.apps.assistant does not have legacy storage
+10-03 08:38:42.957  1273  1273 V StorageManagerService: Package com.android.wallpaper does not have legacy storage
+10-03 08:38:42.957  1273  1273 V StorageManagerService: Package com.google.android.go.networkstack.overlay does not have legacy storage
+10-03 08:38:42.957  1273  1273 V StorageManagerService: Package com.android.vpndialogs does not have legacy storage
+10-03 08:38:42.957  1273  1273 V StorageManagerService: Package com.longcheertel.cit does not have legacy storage
+10-03 08:38:42.959  1273  1273 E AppOps  : 	at com.android.server.StorageManagerService.snapshotAndMonitorLegacyStorageAppOp(StorageManagerService.java:2155)
+10-03 08:38:42.959  1273  1273 E AppOps  : 	at com.android.server.StorageManagerService.-$$Nest$msnapshotAndMonitorLegacyStorageAppOp(Unknown Source:0)
+10-03 08:38:42.959  1273  1273 E AppOps  : 	at com.android.server.StorageManagerService$Lifecycle.onUserStarting(StorageManagerService.java:282)
+10-03 08:38:42.959  1273  1273 V StorageManagerService: Package com.soundcloud.android does not have legacy storage
+10-03 08:38:42.959  1273  1273 V StorageManagerService: Package com.google.android.keep does not have legacy storage
+10-03 08:38:42.959  1273  1273 V StorageManagerService: Package com.android.phone does not have legacy storage
+10-03 08:38:42.959  1273  1273 V StorageManagerService: Package com.android.overlay.gmstelephony does not have legacy storage
+10-03 08:38:42.960  1273  1273 V StorageManagerService: Package com.android.se.go does not have legacy storage
+10-03 08:38:42.960  1273  1273 V StorageManagerService: Package com.android.shell does not have legacy storage
+10-03 08:38:42.960  1273  1273 V StorageManagerService: Package com.android.wallpaperbackup does not have legacy storage
+10-03 08:38:42.960  1273  1273 V StorageManagerService: Package com.android.providers.blockednumber does not have legacy storage
+10-03 08:38:42.962  1273  1273 E AppOps  : 	at com.android.server.StorageManagerService.snapshotAndMonitorLegacyStorageAppOp(StorageManagerService.java:2155)
+10-03 08:38:42.962  1273  1273 E AppOps  : 	at com.android.server.StorageManagerService.-$$Nest$msnapshotAndMonitorLegacyStorageAppOp(Unknown Source:0)
+10-03 08:38:42.962  1273  1273 E AppOps  : 	at com.android.server.StorageManagerService$Lifecycle.onUserStarting(StorageManagerService.java:282)
+10-03 08:38:42.962  1273  1273 V StorageManagerService: Package com.duckduckgo.mobile.android does not have legacy storage
+10-03 08:38:42.962  1273  1273 V StorageManagerService: Package com.android.wifi.system.resources.overlay does not have legacy storage
+10-03 08:38:42.962  1273  1273 V StorageManagerService: Package com.android.overlay.gmstelecomm does not have legacy storage
+10-03 08:38:42.962  1273  1273 V StorageManagerService: Package com.android.providers.userdictionary does not have legacy storage
+10-03 08:38:42.962  1273  1273 V StorageManagerService: Package com.android.emergency does not have legacy storage
+10-03 08:38:42.962  1273  1273 V StorageManagerService: Package com.android.hotspot2.osulogin does not have legacy storage
+10-03 08:38:42.962  1273  1273 V StorageManagerService: Package com.google.android.gms.location.history does not have legacy storage
+10-03 08:38:42.962  1273  1273 V StorageManagerService: Package com.android.internal.systemui.navbar.gestural does not have legacy storage
+10-03 08:38:42.962  1273  1273 V StorageManagerService: Package com.google.android.overlay.gmsconfig.personalsafety does not have legacy storage
+10-03 08:38:42.962  1273  1273 V StorageManagerService: Package com.android.location.fused does not have legacy storage
+10-03 08:38:42.962  1273  1273 V StorageManagerService: Package com.android.systemui does not have legacy storage
+10-03 08:38:42.963  1273  1273 V StorageManagerService: Package com.google.android.ondevicepersonalization.services does not have legacy storage
+10-03 08:38:42.963  1273  1273 V StorageManagerService: Package com.google.android.apps.youtube.music does not have legacy storage
+10-03 08:38:42.963  1273  1273 V StorageManagerService: Package com.android.bluetoothmidiservice does not have legacy storage
+10-03 08:38:42.963  1273  1273 V StorageManagerService: Package com.mi.globallayout does not have legacy storage
+10-03 08:38:42.963  1273  1273 V StorageManagerService: Package com.facebook.appmanager does not have legacy storage
+10-03 08:38:42.963  1273  1273 V StorageManagerService: Package com.xiaomi.discover does not have legacy storage
+10-03 08:38:42.963  1273  1273 V StorageManagerService: Package com.miui.analytics.go does not have legacy storage
+10-03 08:38:42.963  1273  1273 V StorageManagerService: Package com.android.traceur does not have legacy storage
+10-03 08:38:42.963  1273  1273 V StorageManagerService: Package com.google.android.cellbroadcastreceiver does not have legacy storage
+10-03 08:38:42.963  1273  1273 V StorageManagerService: Package com.dolby.dolby234 does not have legacy storage
+10-03 08:38:42.963  1273  1273 V StorageManagerService: Package android.auto_generated_rro_product__ does not have legacy storage
+10-03 08:38:42.963  1273  1273 V StorageManagerService: Package com.google.android.overlay.gmsconfig.message does not have legacy storage
+10-03 08:38:42.963  1273  1273 V StorageManagerService: Package com.android.bluetooth does not have legacy storage
+10-03 08:38:42.963  1273  1273 V StorageManagerService: Package com.android.wallpaperpicker does not have legacy storage
+10-03 08:38:42.963  1273  1273 V StorageManagerService: Package com.android.providers.contacts does not have legacy storage
+10-03 08:38:42.964  1273  1273 V StorageManagerService: Package com.android.deskclock.go does not have legacy storage
+10-03 08:38:42.964  1273  1273 V StorageManagerService: Package com.android.internal.systemui.navbar.gestural_narrow_back does not have legacy storage
+10-03 08:38:42.964  1273  1273 V StorageManagerService: Package com.performance.meshview does not have legacy storage
+10-03 08:38:42.964  1273  1273 V StorageManagerService: Package com.google.android.overlay.gmsconfig.go does not have legacy storage
+10-03 08:38:42.964  1273  1273 V StorageManagerService: Package com.mediatek.gbaservice does not have legacy storage
+10-03 08:38:42.964  1273  1273 V StorageManagerService: Package com.google.android.inputmethod.latin does not have legacy storage
+10-03 08:38:42.964  1273  1273 V StorageManagerService: Package com.google.android.apps.restore does not have legacy storage
+10-03 08:38:42.965  1273  1273 W SystemServiceManager: Service com.android.server.StorageManagerService$Lifecycle took 69 ms in onStartUser-0
+10-03 08:38:47.413   760   760 I auditd  : type=1400 audit(0.0:86): avc: denied { read } for comm=494D4342206D73672068616E646C65 name="u:object_r:vendor_default_prop:s0" dev="tmpfs" ino=865 scontext=u:r:vtservice:s0 tcontext=u:object_r:vendor_default_prop:s0 tclass=file permissive=0
+10-03 08:38:48.091  1273  1295 D ActivityManagerTiming: OnBootPhase_1000_com.android.server.StorageManagerService$Lifecycle
+10-03 08:38:48.091  1273  1479 D StorageManagerService: Thinking about init, mBootCompleted=true, mDaemonConnected=true
+10-03 08:38:48.091  1273  1479 D StorageManagerService: Thinking about reset, mBootCompleted=true, mDaemonConnected=true
+10-03 08:38:48.092  1273  1479 I StorageManagerService: Resetting vold...
+10-03 08:38:48.092   396   469 I vold    : emulated;0 destroy++
+10-03 08:38:48.092   396   469 I vold    : emulated;0 destroy--
+10-03 08:38:48.093  1273  1479 I StorageManagerService: Reset vold
+10-03 08:38:48.093   396   469 I vold    : onUserAdded: 0
+10-03 08:38:48.169  1273  1295 D StorageManagerService: unlockUserKey: 0 isFileEncryptedNativeOrEmulated: true hasSecret: false
+10-03 08:38:48.170  1273  1295 D StorageManagerService: Not unlocking user 0's CE storage yet because a secret is needed
+10-03 08:38:48.326  2051  2051 I auditd  : type=1400 audit(0.0:87): avc: denied { getattr } for comm="charge_logger" path="/dev/kmsg" dev="tmpfs" ino=9229 scontext=u:r:charge_logger:s0 tcontext=u:object_r:kmsg_device:s0 tclass=chr_file permissive=0
+10-03 08:38:50.669   452  1061 E android.system.suspend@1.0-service: Error opening kernel wakelock stats for: wakeup108 (../../devices/platform/1000d000.pwrap/1000d000.pwrap:main_pmic/mt6357-charger-type-detection/power_supply/ac/wakeup108): Permission denied
+10-03 08:38:50.666   452   452 I auditd  : type=1400 audit(0.0:88): avc: denied { read } for comm="binder:452_4" name="wakeup108" dev="sysfs" ino=39629 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs_batteryinfo:s0 tclass=dir permissive=0
+10-03 08:38:50.666   452   452 W binder:452_4: type=1400 audit(0.0:88): avc: denied { read } for name="wakeup108" dev="sysfs" ino=39629 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs_batteryinfo:s0 tclass=dir permissive=0
+10-03 08:38:50.683   452   452 I auditd  : type=1400 audit(0.0:89): avc: denied { read } for comm="binder:452_4" name="wakeup104" dev="sysfs" ino=37860 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs_battery_supply:s0 tclass=dir permissive=0
+10-03 08:38:50.683   452   452 W binder:452_4: type=1400 audit(0.0:89): avc: denied { read } for name="wakeup104" dev="sysfs" ino=37860 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs_battery_supply:s0 tclass=dir permissive=0
+10-03 08:38:50.686   452  1061 E android.system.suspend@1.0-service: Error opening kernel wakelock stats for: wakeup104 (../../devices/platform/1000d000.pwrap/1000d000.pwrap:main_pmic/mt6357-gauge/power_supply/battery/wakeup104): Permission denied
+10-03 08:38:50.703   452   452 I auditd  : type=1400 audit(0.0:90): avc: denied { read } for comm="binder:452_4" name="wakeup109" dev="sysfs" ino=39669 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs_usb_supply:s0 tclass=dir permissive=0
+10-03 08:38:50.703   452   452 W binder:452_4: type=1400 audit(0.0:90): avc: denied { read } for name="wakeup109" dev="sysfs" ino=39669 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs_usb_supply:s0 tclass=dir permissive=0
+10-03 08:38:50.704   452  1061 E android.system.suspend@1.0-service: Error opening kernel wakelock stats for: wakeup109 (../../devices/platform/1000d000.pwrap/1000d000.pwrap:main_pmic/mt6357-charger-type-detection/power_supply/usb/wakeup109): Permission denied
+10-03 08:38:50.713   452   452 I auditd  : type=1400 audit(0.0:91): avc: denied { read } for comm="binder:452_4" name="wakeup107" dev="sysfs" ino=39592 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs_usb_supply:s0 tclass=dir permissive=0
+10-03 08:38:50.713   452   452 W binder:452_4: type=1400 audit(0.0:91): avc: denied { read } for name="wakeup107" dev="sysfs" ino=39592 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs_usb_supply:s0 tclass=dir permissive=0
+10-03 08:38:50.716   452  1061 E android.system.suspend@1.0-service: Error opening kernel wakelock stats for: wakeup107 (../../devices/platform/1000d000.pwrap/1000d000.pwrap:main_pmic/mt6357-charger-type-detection/power_supply/mtk_charger_type/wakeup107): Permission denied
+10-03 08:38:51.306     1     1 I auditd  : type=1107 audit(0.0:92): uid=0 auid=4294967295 ses=4294967295 subj=u:r:init:s0 msg='avc: denied { set } for property=vendor.sms.md.ready pid=1174 uid=1001 gid=1001 scontext=u:r:rild:s0 tcontext=u:object_r:vendor_default_prop:s0 tclass=property_service permissive=0'
+10-03 08:38:51.306     1     1 W /system/bin/init: type=1107 audit(0.0:92): uid=0 auid=4294967295 ses=4294967295 subj=u:r:init:s0 msg='avc: denied { set } for property=vendor.sms.md.ready pid=1174 uid=1001 gid=1001 scontext=u:r:rild:s0 tcontext=u:object_r:vendor_default_prop:s0 tclass=property_service permissive=0'
+10-03 08:38:53.902  1679  1679 D MTKSST  : [GsmSST1] CarrierConfigChange PersistableBundle[{imsvoice.voice_on_default_bearer_supported_bool=false, imsss.ut_transport_type_int=1, carrier_volte_provisioned_bool=false, support_cdma_1x_voice_calls_bool=true, support_ss_over_cdma_bool=false, disable_charge_indication_bool=false, ims.sip_timer_t4_millis_int=17000, config_call_forwarding_CFNRc_visibility_bool=true, support_tdscdma_bool=false, config_video_supp_service=true, httpSocketTimeout=300000, mtk_resume_hold_call_after_active_call_end_by_remote=false, allowed_initial_attach_apn_types_string_array=[ia, default], disable_supplementary_services_in_airplane_mode_bool=false, call_barring_default_service_class_int=1, call_redirection_service_component_name_string=null, carrier_wfc_supports_wifi_only_bool=false, carrier_default_actions_on_default_network_available_string_array=[false: 7, true: 8], imsvoice.minimum_session_expires_timer_sec_int=90, mtk_ct_volte_status_bool=false, iwlan_handover_policy_string_array=[source=GERAN|UTRAN|EUTRAN|NGRAN|IWLAN, target=GERAN|UTRAN|EUTRAN|NGRAN|IWLAN, type=allowed], mtk_carrier_ss_need_check_data_roaming=false, operator_selection_expand_bool=true, disable_cdma_activation_code_bool=false, simplified_network_settings_bool=false, imsemergency.emergency_registration_timer_millis_int=10000, call_forwarding_when_unanswered_supported_bool=true, imsvt.h264_payload_description_bundle=PersistableBundle[{99=PersistableBundle[{}], 100=PersistableBundle[{imsvt.video_codec_attribute_packetization_mode_int=0}]}], config_cota_carrier_customize_for_stk_feature=false, support_tdscdma_roaming_networks_string_array=null, opportunistic.5g_data_switch_hysteresis_time_long=2000, ims.sip_timer_d_millis_int=130000, gps.lpp_profile=2, call_barring_visibility_bool=true, gba_mode_int=1, ims.registration_subscribe_expiry_timer_sec_int=600000, gps.es_extension_sec=0, enable_apps_string_array=null, 5g_icon_display_secondary_grace_period_string=, carrier_default_wfc_ims_roaming_enabled_bool=true, cdma_nonroaming_networks_string_array=null, imsss.ut_as_server_fqdn_string=, signal_strength_nr_nsa_use_lte_as_primary_bool=true, aliasMinChars=2, mtk_key_multiline_allow_cross_line_conference_bool=false, fdn_number_length_limit_int=20, support_ims_call_forwarding_while_roaming_bool=true, mtk_carrier_wfc_location_response_timeout=55000, wfc_data_spn_format_idx_int=0, hide_sim_lock_settings_bool=false, drop_video_call_when_answering_audio_call_bool=false, mtk_rtt_auto_accept_request_bool=false, data_stall_recovery_timers_long_array=[180000, 180000, 180000, 180000], opportunistic_esim_download_via_wifi_only_bool=false, imsss.xcap_over_ut_supported_rats_int_array=[3, 5], ci_action_on_sys_update_bool=false, carrier_certificate_string_array=[], convert_cdma_caller_id_mmi_codes_while_roaming_on_3gpp_bool=false, mtk_ignore_clir_when_ecc=true, support_enhanced_call_blocking_bool=true, iwlan.ike_rekey_hard_timer_in_sec=14400, vvm_port_number_int=0, config_prefer_2g_bool=false, carrier_default_wfc_ims_enabled_bool=true, iwlan.ike_session_encryption_aes_ctr_key_size_int_array=[128, 192, 256], dial_string_replace_string_array=null, opportunistic_network_entry_threshold_bandwidth_int=1024, opportunistic_network_data_switch_exit_hysteresis_time_long=3000, imsss.use_csfb_on_xcap_over_ut_failure_bool=true, gsm_nonroaming_networks_string_array=null, imsserviceentitlement.ims_provisioning_bool=false, wifi.avoid_5ghz_softap_for_laa_bool=false, hide_ims_apn_bool=true, mtk_carrier_wfc_get_location_always=true, show_toast_when_conference_full=true, vvm_destination_number_string=, unmetered_nr_sa_mmwave_bool=false, ims.ipsec_encryption_algorithms_int_array=[0, 1, 2], opportunistic.5g_backoff_time_long=10000, enable_cross_sim_calling_on_opportunistic_data_bool=false, vonr_setting_visibility_bool=true, imssms.sms_over_ims_supported_bool=true, dtmf_type_enabled_bool=false, ims.sip_timer_f_millis_int=128000, allow_video_calling_fallback_bool=true, mtk_carrier_ims_ecbm_supported=false, nr_advanced_threshold_bandwidth_khz_int=0, config_volte_on_by_default_after_
 
 ----------------------------------------
 
