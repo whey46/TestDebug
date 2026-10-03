@@ -1,0 +1,21 @@
+adb shell dumpsys -l | grep -i media
+
+  media.VTS
+  media.audio_flinger
+  media.audio_policy
+  media.camera
+  media.camera.proxy
+  media.extractor
+  media.metrics
+  media.player
+  media.resource_manager
+  media.resource_observer
+  media_communication
+  media_metrics
+  media_projection
+  media_router
+  media_session
+  vendor.mediatek.framework.mtksf_ext.IMtkSF_ext/default
+
+----------------------------------------
+
