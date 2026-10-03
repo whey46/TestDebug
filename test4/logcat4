@@ -1,0 +1,12 @@
+adb logcat -b all -d -v threadtime | grep -iE vold|StorageManager}ExternalStorageService}FuseDaemon|FUSE|emulated|mount|f2fs|void|dm-|mount|I/O error
+
+./exec.sh: line 28: StorageManager}ExternalStorageService}FuseDaemon: command not found
+./exec.sh: line 28: FUSE: command not found
+./exec.sh: line 28: emulated: command not found
+./exec.sh: line 28: void: command not found
+./exec.sh: line 28: f2fs: command not found
+./exec.sh: line 28: dm-: command not found
+./exec.sh: line 28: I/O: No such file or directory
+
+----------------------------------------
+

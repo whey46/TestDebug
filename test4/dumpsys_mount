@@ -1,0 +1,6 @@
+adb dumpsys mount
+
+adb: unknown command dumpsys
+
+----------------------------------------
+
